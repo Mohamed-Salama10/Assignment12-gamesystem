@@ -1,0 +1,77 @@
+body {
+  --main-color: #272b30;
+}
+
+header {
+  background-color: var(--main-color);
+}
+
+.w-40 {
+  width: 40%;
+}
+.w-60 {
+  width: 60%;
+}
+
+
+
+
+
+
+
+.title-img {
+  transform: translateY(-100px);
+  -webkit-transform: translateY(-150px);
+  -moz-transform: translateY(-100px);
+  -ms-transform: translateY(-100px);
+  -o-transform: translateY(-100px);
+}
+.title-img-container {
+  height: 260px;
+  overflow: hidden;
+}
+
+.collapse .navbar-collapse .bg-black {
+  height: 100px;
+}
+.games-genre {
+  font-size: 14px;
+}
+
+.navbar-style {
+  background-color: RGB(58, 73, 123);
+  box-shadow: -2px -2px 30px black;
+  height: 60px;
+}
+
+.cards {
+  border: black 1px solid;
+}
+
+.cards-fs{
+  font-size: 13px;
+}
+
+.cards img{
+  filter: grayscale(80%);
+  -webkit-filter: grayscale(80%);
+  transition: 0.2s ease-in ;
+  -webkit-transition: 0.4s ease-in ;
+  -moz-transition: 0.2s ease-in ;
+  -ms-transition: 0.2s ease-in ;
+  -o-transition: 0.2s ease-in ;
+}
+
+.cards:hover{
+  scale: 1.05;
+  transition: 0.4s ease-in ;
+  -webkit-transition: 0.4s ease-in ;
+  -moz-transition: 0.4s ease-in ;
+  -ms-transition: 0.4s ease-in ;
+  -o-transition: 0.4s ease-in ;
+}
+
+.cards img:hover{
+  filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+}

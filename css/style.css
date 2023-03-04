@@ -69,6 +69,11 @@ header {
   filter: grayscale(0%);
   -webkit-filter: grayscale(0%);
 }
-.active{
-  
+
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  display: none;
 }

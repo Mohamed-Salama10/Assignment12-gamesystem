@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body>
+  <body class="overflow-hidden">
     <header class="">
       <div class="title-img-container">
         <img src="./images/wraper.png" class="w-100 title-img" alt="" />
@@ -55,26 +55,44 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white games-genre" id="shooterButton"
-                href="#">SHOOTER</a>
+                <a
+                  class="nav-link text-white games-genre"
+                  id="shooterButton"
+                  href="#"
+                  >SHOOTER</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white games-genre" 
-                href="#" id="sailingButton">SAILING</a>
+                <a
+                  class="nav-link text-white games-genre"
+                  href="#"
+                  id="sailingButton"
+                  >SAILING</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white games-genre" href="#" id="permadeathButton"
+                <a
+                  class="nav-link text-white games-genre"
+                  href="#"
+                  id="permadeathButton"
                   >PERMADEATH</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white games-genre" href="#"
-                id="superheroButton"
+                <a
+                  class="nav-link text-white games-genre"
+                  href="#"
+                  id="superheroButton"
                   >SUPERHERO</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white games-genre" href="#" id="pixelButton">PIXEL</a>
+                <a
+                  class="nav-link text-white games-genre"
+                  href="#"
+                  id="pixelButton"
+                  >PIXEL</a
+                >
               </li>
             </ul>
           </div>
@@ -84,11 +102,19 @@
       <div class="container mt-5 w-75 px-2">
         <div class="row" id="cards-row"></div>
       </div>
+
+      <div
+        class="loading-screen position-fixed top-0 bottom-0 start-0 end-0 bg-black z-3 "
+      >
+        <i class="fa-solid fa-spinner fa-10x fa-spin"></i>
+      </div>
     </header>
 
     <!--Script linking-->
+
     <script src="./js/all.min.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.6.3.slim.min.js"></script>
     <script src="./js/ui.js" type="module"></script>
     <script src="./js/main.js" type="module"></script>
   </body>

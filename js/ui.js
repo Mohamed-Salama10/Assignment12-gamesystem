@@ -1,3 +1,4 @@
+import {gameDetails} from "./gameDetails.js"
 export class ui {
   constructor() {
     this.getGamesData("MMORPG");
@@ -5,12 +6,14 @@ export class ui {
 
   async getGamesData(category) {
     const options = {
-      method: 'GET',
+      method: "GET",
       headers: {
-        'X-RapidAPI-Key': 'c4c10201e6msh32b0f012d5f24b6p182113jsn4b753d588fb1',
-        'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
-      }
+        "X-RapidAPI-Key": "c4c10201e6msh32b0f012d5f24b6p182113jsn4b753d588fb1",
+        "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
+      },
     };
+    let loadingScreen = $(".loading-screen");
+    loadingScreen.show();
 
     const response = await fetch(
       `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${category}`,
@@ -19,21 +22,26 @@ export class ui {
 
     const jsonData = await response.json();
 
-
     this.displayData(jsonData, category);
+
+    loadingScreen.hide();
+    let cards = document.querySelectorAll("#cardsContainer");
+    this.applyingClikcEvent(cards);
   }
 
   displayData(data, category) {
     let rows = document.querySelector("#cards-row");
 
-
     let container = ``;
 
     for (const game of data) {
-      container += `<div class="col-lg-3 col-md-6 col-sm-12 mt-3" >
+      container += `<div class="col-lg-3 col-md-6 col-sm-12 mt-3" id="cardsContainer">
       <div>
         <div class="card bg-transparent p-3 style="width: 18rem">
         <div class="cards">
+        <p class="bg-secondary d-inline px-2 py-1 rounded-2 d-none" id = "gameId">
+        ${game.id}        
+      </p>
           <img
             src=${game.thumbnail}
             class="card-img-top w-100"
@@ -71,5 +79,14 @@ export class ui {
     }
 
     rows.innerHTML = container;
+  }
+
+  applyingClikcEvent(cards) {
+    for (const card of cards) {
+      card.addEventListener("click", function () {
+        let id = card.querySelector("#gameId").innerHTML;
+        let gameDetail = new gameDetails(id)
+      });
+    }
   }
 }

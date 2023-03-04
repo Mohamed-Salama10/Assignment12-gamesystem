@@ -1,5 +1,6 @@
 "use strict";
 import { ui } from "./ui.js";
+
 $(document).ready(function () {
   let game = new ui();
   let mmorpgButton = document.getElementById("mmorpgButton");
@@ -27,7 +28,6 @@ $(document).ready(function () {
   }
 
   mmorpgButton.addEventListener("click", function () {
-    showLoading();
     changeDisplayedCategory(this);
   });
   shooterButton.addEventListener("click", function () {
@@ -53,10 +53,5 @@ $(document).ready(function () {
     removeActiveStatus(buttonsArray);
     button.classList.replace("text-white", "text-primary");
   }
-
-  function showLoading() {
-    let loadingScreen = $(".loading-screen");
-  }
-
-
+  let cards = document.querySelectorAll("#cardsContainer");
 });
